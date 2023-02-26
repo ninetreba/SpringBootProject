@@ -1,0 +1,62 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: create-transport
+      author: netreba
+      changes:
+        - createTable:
+            tableName: TRANSPORT
+            columns:
+              - column:
+                  name: ID_TRANSPORT
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: TRANSPORT_TYPE
+                  type: varchar(60)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: NUMBER
+                  type: varchar(60)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: TRANSPORT_CONDITION
+                  type: varchar(60)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: CURRENT_PARKING
+                  type: bigint
+                  constraints:
+                    foreignKeyName: current_Parking
+                    referencedTableName: PARKING
+                    referencedColumnNames: ID_PARKING
+              - column:
+                  name: STATUS
+                  type: varchar(60)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: TRANSPORT_STATUS
+                  type: varchar(60)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: LONGITUDE
+                  type: double
+                  constraints:
+                    nullable: false
+              - column:
+                  name: LATITUDE
+                  type: double
+                  constraints:
+                    nullable: false
+
+
+
+

@@ -1,0 +1,28 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{ISO8601} |-%-5level %class{1}:%line - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/logging-sample.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+        <fileNamePattern>logs/logging-sample.%d.zip</fileNamePattern>
+        <maxHistory>5</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{ISO8601} |-%-5level in %logger{0} %class{1} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <logger name = "com.accenture.russiaatc.irentservice10.SNAPSHOT" level="debug"/>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+    </root>
+</configuration>

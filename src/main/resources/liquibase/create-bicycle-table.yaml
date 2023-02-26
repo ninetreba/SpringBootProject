@@ -1,0 +1,20 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: create-bicycle
+      author: netreba
+      changes:
+        - createTable:
+            tableName: BICYCLE
+            columns:
+              - column:
+                  name: TRANSPORT_ID_TRANSPORT
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    foreignKeyName: Transport_id_transport
+                    referencedTableName: TRANSPORT
+                    referencedColumnNames: ID_TRANSPORT
+

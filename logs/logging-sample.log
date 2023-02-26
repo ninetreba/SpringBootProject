@@ -1,0 +1,128 @@
+2023-02-23 13:29:09,364 |-INFO  in Application o.s.b.StartupInfoLogger - Starting Application using Java 19.0.2 on DESKTOP-QVDMPJF with PID 10864 (C:\Users\nikol\IdeaProjects\project-boot\target\classes started by nikol in C:\Users\nikol\IdeaProjects\project-boot)
+2023-02-23 13:29:09,376 |-DEBUG in Application o.s.b.StartupInfoLogger - Running with Spring Boot v2.6.1, Spring v5.3.13
+2023-02-23 13:29:09,377 |-INFO  in Application o.s.b.SpringApplication - No active profile set, falling back to default profiles: default
+2023-02-23 13:29:11,897 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-23 13:29:12,074 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 150 ms. Found 5 JPA repository interfaces.
+2023-02-23 13:29:12,794 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8086 (http)
+2023-02-23 13:29:12,805 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Initializing ProtocolHandler ["http-nio-8086"]
+2023-02-23 13:29:12,806 |-INFO  in StandardService o.a.j.l.DirectJDKLog - Starting service [Tomcat]
+2023-02-23 13:29:12,806 |-INFO  in StandardEngine o.a.j.l.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2023-02-23 13:29:12,948 |-INFO  in [/] o.a.j.l.DirectJDKLog - Initializing Spring embedded WebApplicationContext
+2023-02-23 13:29:12,948 |-INFO  in ServletWebServerApplicationContext o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3421 ms
+2023-02-23 13:29:13,358 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2023-02-23 13:29:15,697 |-ERROR in HikariPool c.z.h.p.HikariPool - HikariPool-1 - Exception during pool initialization.
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: Соединение разорвано: "java.net.ConnectException: Connection refused: no further information: localhost"
+Connection is broken: "java.net.ConnectException: Connection refused: no further information: localhost" [90067-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.engine.SessionRemote.connectServer(SessionRemote.java:439)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:321)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:266)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:412)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.Application.main(Application.java:11)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:535)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:585)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:666)
+	at org.h2.util.NetUtils.createSocket(NetUtils.java:103)
+	at org.h2.util.NetUtils.createSocket(NetUtils.java:83)
+	at org.h2.engine.SessionRemote.initTransfer(SessionRemote.java:119)
+	at org.h2.engine.SessionRemote.connectServer(SessionRemote.java:435)
+	... 32 common frames omitted
+2023-02-23 13:29:15,700 |-WARN  in AnnotationConfigServletWebServerApplicationContext o.s.c.s.AbstractApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.DatabaseException: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Соединение разорвано: "java.net.ConnectException: Connection refused: no further information: localhost"
+Connection is broken: "java.net.ConnectException: Connection refused: no further information: localhost" [90067-200]
+2023-02-23 13:29:15,703 |-INFO  in StandardService o.a.j.l.DirectJDKLog - Stopping service [Tomcat]
+2023-02-23 13:29:15,717 |-INFO  in ConditionEvaluationReportLoggingListener o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-02-23 13:29:15,738 |-ERROR in SpringApplication o.s.b.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.DatabaseException: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Соединение разорвано: "java.net.ConnectException: Connection refused: no further information: localhost"
+Connection is broken: "java.net.ConnectException: Connection refused: no further information: localhost" [90067-200]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:412)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.Application.main(Application.java:11)
+Caused by: liquibase.exception.DatabaseException: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Соединение разорвано: "java.net.ConnectException: Connection refused: no further information: localhost"
+Connection is broken: "java.net.ConnectException: Connection refused: no further information: localhost" [90067-200]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 18 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Соединение разорвано: "java.net.ConnectException: Connection refused: no further information: localhost"
+Connection is broken: "java.net.ConnectException: Connection refused: no further information: localhost" [90067-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.engine.SessionRemote.connectServer(SessionRemote.java:439)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:321)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:266)
+	... 20 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:535)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:585)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:666)
+	at org.h2.util.NetUtils.createSocket(NetUtils.java:103)
+	at org.h2.util.NetUtils.createSocket(NetUtils.java:83)
+	at org.h2.engine.SessionRemote.initTransfer(SessionRemote.java:119)
+	at org.h2.engine.SessionRemote.connectServer(SessionRemote.java:435)
+	... 32 common frames omitted

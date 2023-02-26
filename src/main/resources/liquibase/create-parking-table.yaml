@@ -1,0 +1,50 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: create-parking
+      author: netreba
+      changes:
+        - createTable:
+            tableName: PARKING
+            columns:
+              - column:
+                  name: ID_PARKING
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: NAME
+                  type: varchar(60)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: LONGITUDE
+                  type: double
+                  constraints:
+                    nullable: false
+              - column:
+                  name: LATITUDE
+                  type: double
+                  constraints:
+                    nullable: false
+              - column:
+                  name: RADIUS
+                  type: double
+                  constraints:
+                    nullable: false
+              - column:
+                  name: PARKING_TYPE
+                  type: varchar(60)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: STATUS
+                  type: varchar(60)
+                  constraints:
+                    nullable: false
+
+
+
+

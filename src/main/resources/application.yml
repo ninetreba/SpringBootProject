@@ -1,0 +1,37 @@
+server:
+  port: 8086
+
+
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:tcp:localhost/~/project
+    username: sa
+    password:
+
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.yaml
+    enabled: true
+
+jwt:
+  secret: secret
+
+bot:
+  name: tripprojectbot
+  token: 5214327142:AAYdsb8KjO1UAoahWsAE0HQ0ly2k3mZNfR3fCsY
+
+
+price:
+  startingPriceBicycle : 10
+  startingPriceElectricScooter : 14
+  pricePerMinBicycle : 5
+  pricePerMinElectricScooter : 9
+
+
+maxNumber:
+  trips : 3
+
+
+balance:
+  start : 800
+

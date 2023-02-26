@@ -1,0 +1,45 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: create-user
+      author: netreba
+      changes:
+        - createTable:
+            tableName: USER
+            columns:
+              - column:
+                  name: ID_USER
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: LOGIN
+                  type: varchar(60)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: PASSWORD
+                  type: varchar(60)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: BALANCE
+                  type: DECIMAL(10, 2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: ROLE
+                  type: varchar(60)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: STATUS
+                  type: varchar(60)
+                  constraints:
+                    nullable: false
+
+
+
+

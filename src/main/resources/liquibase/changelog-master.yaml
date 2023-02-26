@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - include:
+      file: liquibase/create-user-table.yaml
+  - include:
+      file: liquibase/create-parking-table.yaml
+  - include:
+      file: liquibase/create-transport-table.yaml
+  - include:
+      file: liquibase/create-bicycle-table.yaml
+  - include:
+      file: liquibase/create-electric-scooter-table.yaml
+  - include:
+      file: liquibase/create-rent-table.yaml
+
+  - include:
+      file: liquibase/insert-data-user.xml
+  - include:
+      file: liquibase/insert-data-parking.xml
+  - include:
+      file: liquibase/insert-data-transport.xml
+
+  - include:
+      file: liquibase/create-user-telegram-table.yaml
+
+

@@ -1,0 +1,29 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: create-electric-scooter
+      author: netreba
+      changes:
+        - createTable:
+            tableName: ELECTRIC_SCOOTER
+            columns:
+              - column:
+                  name: TRANSPORT_ID_TRANSPORT
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    foreignKeyName: Transport_id_transport_es
+                    referencedTableName: TRANSPORT
+                    referencedColumnNames: ID_TRANSPORT
+              - column:
+                  name: BATTERY
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: MAX_SPEED
+                  type: int
+                  constraints:
+                    nullable: false

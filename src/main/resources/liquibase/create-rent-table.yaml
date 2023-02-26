@@ -1,0 +1,69 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: create-rent
+      author: netreba
+      changes:
+        - createTable:
+            tableName: RENT
+            columns:
+              - column:
+                  name: ID_RENT
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: RENT_STATUS
+                  type: varchar(60)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: COST
+                  type: DECIMAL(10, 2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: USER_REF
+                  type: bigint
+                  constraints:
+                    foreignKeyName: user_ref
+                    referencedTableName: USER
+                    referencedColumnNames: ID_USER
+                    nullable: false
+              - column:
+                  name: TRANSPORT_REF
+                  type: bigint
+                  constraints:
+                    foreignKeyName: transport_ref
+                    referencedTableName: TRANSPORT
+                    referencedColumnNames: ID_TRANSPORT
+                    nullable: false
+              - column:
+                  name: START_PARKING
+                  type: int
+                  constraints:
+                    foreignKeyName: start_Parking
+                    referencedTableName: PARKING
+                    referencedColumnNames: ID_PARKING
+                    nullable: false
+              - column:
+                  name: END_PARKING
+                  type: int
+                  constraints:
+                    foreignKeyName: end_Parking
+                    referencedTableName: PARKING
+                    referencedColumnNames: ID_PARKING
+                    nullable: true
+              - column:
+                  name: START_RENT
+                  type: TIMESTAMP(6)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: END_RENT
+                  type: TIMESTAMP(6)
+                  constraints:
+                    nullable: true
+
